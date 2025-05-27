@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: node-deploy
+  name: node-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-deploy
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: node-deploy
+    spec:
+      containers:
+      - image: vinayz7/vimg:v1
+        name: vimg
+        ports:
+        - containerPort: 3000
+        resources: {}
+status: {}
